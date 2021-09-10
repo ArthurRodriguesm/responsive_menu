@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --color0: #202020;
+    --color1: #fff;
+    --color2: #505050;
+}
+
+#menu{
+    width: 100%;
+    height: 9vh;
+    background-color: var(--color0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+/* MENU CHECK ICON*/
+#menu #check{
+    display: none;
+}
+
+#menu > label > .fa{
+    display: none;
+    font-size: 2em;
+    color: var(--color1);
+    margin: 15px;
+}
+
+#menu > span{
+    margin-left: 15px;
+    font-size: 2em;
+    color: var(--color1);
+}
+
+/* MENU LINKS LIST */
+#menu > ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+#menu ul > li {
+    padding: 6px;
+    margin: 10px;
+}
+#menu ul > li a{
+    text-decoration: none;
+    font: normal 1.4em monospace;
+    color: var(--color1);
+}
+
+#menu li > a:hover{
+    background-color: var(--color2);
+}
+
+@media only screen and (max-width: 868px){
+    #menu > label > .fa{
+        display: block;
+    }
+    #menu ul{
+        position: absolute;
+        background-color: var(--color0);
+        flex-direction: column;
+        justify-content: flex-start;
+        top: 9vh;
+        left: 0;
+        width: 60%;
+        height: 91vh;
+        display: none;
+    }
+    #menu #check:checked ~ ul{
+        display: block;
+    }
+
+}
+
+
+#interface{
+    width: 100%;
+    height: 100vh;
+}
+
+#interface > #images{
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+}
+
+#images > h2{
+    color: var(--color0);
+    padding: 10px;
+    margin: 10px;
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#interface > #images > picture{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 427px 427px;
+}
+
+#images img{
+    border: 2px solid var(--color2);
+    width: 640px;
+    height: 426px;
+}
+
+@media only screen and (max-width: 868px){
+    #interface > #images > picture{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #images img{
+        width: 100%;
+        height: 410px;
+        margin: 10px;
+    }
+}
